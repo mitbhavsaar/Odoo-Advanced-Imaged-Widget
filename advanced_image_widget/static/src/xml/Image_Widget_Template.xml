@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+  <t t-name="web.ImageFieldWithPreview" t-inherit="web.ImageField" t-inherit-mode="extension">
+    <xpath expr="//FileUploader" position="inside">
+      <button t-if="props.record and  props.record.data[props.name] and  state.isValid" class="btn btn-light border-0 rounded-circle m-1 p-1" aria-label="Preview" title="Preview" t-on-click="onEyeClick">
+        <i class="fa fa-eye"/>
+      </button>
+    </xpath>
+  </t>
+</templates>

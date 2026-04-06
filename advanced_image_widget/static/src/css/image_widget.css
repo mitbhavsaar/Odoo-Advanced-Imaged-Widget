@@ -1,0 +1,222 @@
+.custom-image-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 700px;
+    height: 90%;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.preview-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.zoom-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+}
+
+.zoom-controls button {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s;
+}
+
+.zoom-controls button:hover {
+    background: #eee;
+}
+
+.zoom-controls i {
+    color: #333;
+}
+.o_field_image {
+    display: inline-block;
+    vertical-align: top;
+    display: right;
+}
+.cropper-container {
+    direction: ltr;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    touch-action: none;
+    user-select: none;
+}
+
+.cropper-container img {
+    display: block;
+    height: 100%;
+    image-orientation: 0deg;
+    max-width: none !important;
+    width: 100%;
+}
+
+.cropper-canvas,
+.cropper-drag-box,
+.cropper-crop-box,
+.cropper-modal,
+.cropper-face,
+.cropper-line,
+.cropper-point {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.cropper-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cropper-view-box {
+    display: block;
+    height: 100%;
+    outline: 1px solid #39f;
+    outline-color: rgba(51, 153, 255, 0.75);
+    overflow: hidden;
+}
+
+.cropper-face {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cropper-line {
+    background-color: #39f;
+    opacity: 0.1;
+}
+
+.cropper-point {
+    background-color: #39f;
+    opacity: 0.75;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: -2.5px 0 0 -2.5px;
+}
+
+.cropper-line.line-e,
+.cropper-point.point-e {
+    cursor: ew-resize;
+    top: 0;
+    bottom: 0;
+    right: -3px;
+}
+
+.cropper-line.line-n,
+.cropper-point.point-n {
+    cursor: ns-resize;
+    left: 0;
+    right: 0;
+    top: -3px;
+}
+
+.cropper-line.line-w,
+.cropper-point.point-w {
+    cursor: ew-resize;
+    top: 0;
+    bottom: 0;
+    left: -3px;
+}
+
+.cropper-line.line-s,
+.cropper-point.point-s {
+    cursor: ns-resize;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+}
+
+.cropper-point.point-ne {
+    cursor: nesw-resize;
+    top: -3px;
+    right: -3px;
+}
+
+.cropper-point.point-nw {
+    cursor: nwse-resize;
+    top: -3px;
+    left: -3px;
+}
+
+.cropper-point.point-sw {
+    cursor: nesw-resize;
+    bottom: -3px;
+    left: -3px;
+}
+
+.cropper-point.point-se {
+    cursor: nwse-resize;
+    bottom: -3px;
+    right: -3px;
+    height: 20px;
+    width: 20px;
+    margin: -10px 0 0 -10px;
+    background-color: #39f;
+    opacity: 1;
+}
+
+
+.img-fluid {
+    max-width:90px;
+    height: 90px;
+}
